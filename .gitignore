@@ -1,0 +1,52 @@
+# .NET
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local workflow/tooling
+.agents/
+.specify/
+specs/
+analysis/
+
+# Legacy database backup folder
+SQL Code Files and backup database/
+
+# Database files
+*.bak
+*.mdf
+*.ldf
+
+# Secrets / local config
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Local.json
+appsettings.*.Local.json
+*.pfx
+*.p12
+*.pem
+*.key
+
+# Logs/temp
+*.log
+*.tmp
+*.temp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
