@@ -1,3 +1,4 @@
+using ITI.ExaminationSystem.API.Middleware;
 using ITI.ExaminationSystem.API.Time;
 using ITI.ExaminationSystem.Application;
 using ITI.ExaminationSystem.Application.Abstractions.Clock;
@@ -12,6 +13,8 @@ internal static class DependencyInjection
         ArgumentNullException.ThrowIfNull(services);
 
         services.AddApplication();
+        services.AddProblemDetails();
+        services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddSingleton<IClock, SystemClock>();
         Infrastructure.DependencyInjection.AddInfrastructure();
 

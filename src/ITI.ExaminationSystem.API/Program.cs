@@ -4,6 +4,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApiFoundation();
 
 WebApplication app = builder.Build();
+app.UseExceptionHandler();
 app.Run();
 
 public partial class Program;
