@@ -1,4 +1,5 @@
 using FluentValidation;
+using ITI.ExaminationSystem.Application.Behaviors;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ITI.ExaminationSystem.Application;
@@ -10,7 +11,10 @@ public static class DependencyInjection
         ArgumentNullException.ThrowIfNull(services);
 
         services.AddMediatR(configuration =>
-            configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+        {
+            configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
+        });
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
 
         return services;
